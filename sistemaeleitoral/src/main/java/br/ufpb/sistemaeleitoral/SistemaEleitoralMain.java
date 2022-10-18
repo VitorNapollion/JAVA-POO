@@ -17,13 +17,13 @@ public class SistemaEleitoralMain extends JFrame implements ActionListener {
     JButton b3 = new JButton("Contar Votos do Candidato");
     JButton b4 = new JButton("Cadastrar Candidato");
     JButton b5 = new JButton("Cadastrar Eleitor");
-    ImageIcon Image = new ImageIcon(getClass().getResource("urna.jpg"));
+    ImageIcon Image = new ImageIcon("./src/main/java/br/ufpb/sistemaeleitoral/urna.jpg");
     JLabel label = new JLabel(Image);
     JLabel texto = new JLabel("Bem Vindos ao Sistema Eleitoral POO");
     Font fonte = new Font("Serif", Font.BOLD, 20);
 
     public SistemaEleitoralMain() {
-        
+
         add(label);
 
         //CONFIGURAÇÕES DA JANELA PRINCIPAL
@@ -45,7 +45,7 @@ public class SistemaEleitoralMain extends JFrame implements ActionListener {
         b3.setBounds(100, 146, 200, 30);
         add(b3);
         b3.addActionListener(this);
-        b4.setBounds(125, 194, 150, 30);
+        b4.setBounds(115, 194, 170, 30);
         add(b4);
         b4.addActionListener(this);
         b5.setBounds(125, 240, 150, 30);
@@ -63,14 +63,14 @@ public class SistemaEleitoralMain extends JFrame implements ActionListener {
     public static void main(String[] args) {
         new SistemaEleitoralMain();
 
-    
+
     }
 
     SistemaEleitoralMap sistema = new SistemaEleitoralMap();
 
     @Override
     public void actionPerformed(ActionEvent e){
-        
+
         if (e.getSource() == (b1)) {
             String tituloEleitor = JOptionPane.showInputDialog("Digite seu titulo: ").toUpperCase();
             int numeroVotado = Integer.parseInt(JOptionPane.showInputDialog("Digite o número do Candidato: "));
@@ -107,7 +107,7 @@ public class SistemaEleitoralMain extends JFrame implements ActionListener {
             } else{
                 JOptionPane.showMessageDialog(null, votos);
             }
-            
+
         }
 
 
@@ -129,7 +129,7 @@ public class SistemaEleitoralMain extends JFrame implements ActionListener {
                 sistema.cadastraCandidato(nome, numero, partido);
             }
 
-            
+
         }
 
         else if(e.getSource() == b5){
@@ -142,7 +142,7 @@ public class SistemaEleitoralMain extends JFrame implements ActionListener {
             }
         }
 
-        
+
     }
 
 }

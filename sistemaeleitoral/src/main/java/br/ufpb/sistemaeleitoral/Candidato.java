@@ -4,11 +4,15 @@ public class Candidato {
     private String nome;
     private int numero;
     private Partido partido;
-    
+
     public Candidato(String nome, int numero, Partido partido) {
-		this.nome = nome;
-		this.numero = numero;
-		this.partido = partido;
+        this.nome = nome;
+        this.numero = numero;
+        this.partido = partido;
+    }
+
+    public String toString(){
+        return "Nome: " + nome + " Número: " + numero + " Partido: " + partido;
     }
     public String getNome(){
         return this.nome;
@@ -25,12 +29,12 @@ public class Candidato {
     public void setNumero(int numero){
         this.numero = numero;
     }
-	
+
     public Partido getPartido() {
-	    return partido;
+        return partido;
     }
 
     public void setPartido(Partido partido) {
-	    this.partido = partido;
+        this.partido = partido;
     }
 }
